@@ -1,19 +1,19 @@
-/* LOADING SCREEN */
+/* FASTER LOADING */
 window.onload = () => {
     setTimeout(() => {
         document.getElementById("loading-screen").style.display = "none";
         document.querySelector(".content").classList.add("fade-in");
-    }, 1200);
+    }, 600);
 };
 
 /* TYPING EFFECT */
 document.addEventListener("DOMContentLoaded", () => {
-    const name = "ANAS ELSHAER";
+    const text = "ANAS ELSHAER";
     let i = 0;
 
     function type() {
-        if (i < name.length) {
-            document.getElementById("typing").textContent += name.charAt(i);
+        if (i < text.length) {
+            document.getElementById("typing").textContent += text.charAt(i);
             i++;
             setTimeout(type, 55);
         }
@@ -21,15 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
     type();
 });
 
-/* FADE-IN SECTIONS */
+/* FADE-IN ON SCROLL */
 const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("fade-in");
-        }
+    entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add("fade-in");
     });
 });
 
-document.querySelectorAll(".section").forEach(sec => {
-    observer.observe(sec);
-});
+document.querySelectorAll(".section").forEach(sec => observer.observe(sec));
