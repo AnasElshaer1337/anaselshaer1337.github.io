@@ -1,12 +1,12 @@
-/* ========== LOADING SCREEN ========== */
+/* LOADING SCREEN */
 window.onload = () => {
     setTimeout(() => {
         document.getElementById("loading-screen").style.display = "none";
         document.querySelector(".content").classList.add("fade-in");
-    }, 1200); // Fast & clean loading
+    }, 1200);
 };
 
-/* ========== TYPING NAME EFFECT ========== */
+/* TYPING EFFECT */
 document.addEventListener("DOMContentLoaded", () => {
     const name = "ANAS ELSHAER";
     let i = 0;
@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", () => {
         if (i < name.length) {
             document.getElementById("typing").textContent += name.charAt(i);
             i++;
-            setTimeout(type, 60);
+            setTimeout(type, 55);
         }
     }
     type();
 });
 
-/* ========== FADE-IN SECTIONS ON SCROLL ========== */
+/* FADE-IN SECTIONS */
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
